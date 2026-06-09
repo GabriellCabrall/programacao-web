@@ -114,14 +114,6 @@
   scale: 1.2;
 }
 
-.footer {
-  text-align: center;
-  color: #fff;
-  padding: 20px;
-  position: relative;
-  z-index: 1;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   .container {

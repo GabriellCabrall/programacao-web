@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './SimOuNao.module.css'
+import Footer from '../../components/Footer'
 import logo from '../../assets/logobranca.svg'
 import particulas from '../../assets/particulas.png'
 
@@ -33,9 +34,7 @@ function SimOuNao() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        Criado e desenvolvido por Mars Design Gráfico @
-      </footer>
+      <Footer />
     </div>
   )
 }

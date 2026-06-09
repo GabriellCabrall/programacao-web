@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+@keyframes entrar {
+  from { left: -800px; opacity: 0; }
+  to   { left: 0px;    opacity: 1; }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  animation: entrar 3s ease-out;
+  position: relative;
+}
+
+.logo {
+  height: 72px;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.navLink {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.025em;
+  line-height: 42px;
+  transition: opacity 0.3s;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.hr {
+  border: none;
+  background-color: #fff;
+  height: 1px;
+}
+
+/* Menu hamburguer para mobile */
+.menuToggle {
+  display: none;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px 10px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menuToggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 100, 0, 0.95);
+    padding: 20px 40px;
+    z-index: 10;
+  }
+
+  .navAberto {
+    display: flex;
+  }
+
+  .navLink {
+    font-size: 18px;
+  }
+}
