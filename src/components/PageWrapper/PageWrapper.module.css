@@ -1,0 +1,51 @@
+@keyframes gradiente {
+  0%   { background: #FFA800; }
+  25%  { background: #ff8800; }
+  50%  { background: #ff6600; }
+  75%  { background: #ffa600; }
+  100% { background: #FFA800; }
+}
+
+@keyframes particulas {
+  0%   { top: 0px; }
+  25%  { top: 30px; }
+  50%  { top: 50px; }
+  75%  { top: 30px; }
+  100% { top: 0px; }
+}
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(316.12deg, #FFA800 59.23%, #FF2525 116.27%);
+  animation: gradiente 7s infinite;
+  transition: background 1.5s;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.particulas {
+  position: absolute;
+  left: 50%;
+  animation: particulas 7s infinite;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.conteudo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .particulas {
+    left: 20%;
+    width: 80%;
+  }
+}

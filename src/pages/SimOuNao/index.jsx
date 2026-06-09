@@ -1,16 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './SimOuNao.module.css'
+import PageWrapper from '../../components/PageWrapper'
 import Footer from '../../components/Footer'
 import logo from '../../assets/logobranca.svg'
-import particulas from '../../assets/particulas.png'
 
 function SimOuNao() {
   const navigate = useNavigate()
 
   return (
-    <div className={styles.page}>
-      <img className={styles.particulas} src={particulas} alt="" aria-hidden="true" />
-
+    <PageWrapper>
       <main className={styles.container}>
         <div className={styles.containerImg}>
           <img src={logo} alt="Logo Mars Beer" />
@@ -35,7 +33,7 @@ function SimOuNao() {
       </main>
 
       <Footer />
-    </div>
+    </PageWrapper>
   )
 }
 
