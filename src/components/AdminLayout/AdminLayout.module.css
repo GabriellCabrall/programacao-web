@@ -1,0 +1,193 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 240px;
+  background: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+}
+
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 24px;
+  border-bottom: 1px solid #333;
+}
+
+.sidebarLogo img {
+  height: 36px;
+}
+
+.sidebarLogo span {
+  color: #FFA800;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  flex: 1;
+  gap: 4px;
+}
+
+.navLabel {
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 0.1em;
+  padding: 12px 24px 4px;
+  text-transform: uppercase;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.navLink:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.navLink.ativo {
+  background: #2a2a2a;
+  color: #FFA800;
+  border-left-color: #FFA800;
+}
+
+.navLink svg {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Seção do usuário no rodapé da sidebar */
+.sidebarFooter {
+  border-top: 1px solid #333;
+  padding: 20px 24px;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.usuarioAvatar {
+  width: 34px;
+  height: 34px;
+  background: #FFA800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.usuarioInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.usuarioNome {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.usuarioEmail {
+  color: #666;
+  font-size: 11px;
+}
+
+.btnLogout {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #444;
+  color: #aaa;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btnLogout:hover {
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+/* ── Conteúdo principal ── */
+.main {
+  margin-left: 240px;
+  flex: 1;
+  background: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 13px;
+}
+
+.topbar strong {
+  color: #1c1c1c;
+}
+
+.conteudo {
+  padding: 32px;
+  flex: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+}

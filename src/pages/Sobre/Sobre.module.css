@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+@keyframes sol {
+  0%   { left: 1500px; rotate: 2000deg; scale: 0; }
+  50%  { rotate: 1000deg; scale: 2; }
+  100% { left: -300px; rotate: 0deg; scale: 0; }
+}
+
+/* Equivalente ao yellow-txt original, mas usa transform para não conflitar
+   com o left de posicionamento absoluto */
+@keyframes slideIn {
+  from { transform: translateX(-800px); opacity: 0; }
+  to   { transform: translateX(0);      opacity: 1; }
+}
+
+/* ── Sol ── */
+.sol {
+  position: absolute;
+  width: 10%;
+  left: -600px;
+  padding: 20px;
+  animation: sol 5s;
+  scale: -1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Estilos base compartilhados ── */
+.titulo {
+  font-family: 'Alata', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #fff;
+  cursor: default;
+  transition: 0.5s;
+}
+.titulo:hover { transform: scale(1.2); }
+
+.descricao {
+  font-family: 'Alata', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.6;
+  cursor: default;
+  transition: 0.5s;
+}
+.descricao:hover { transform: scale(1.2); }
+
+/* ══════════════════════════════════════
+   Seção 1 — Pilsen (fundo laranja do PageWrapper)
+   No original: filhos absolutos em relação ao body.
+   Aqui: section é position:relative, subtraímos ~121px do header.
+   Original beer:  top:218px, left:1100px → top:97px, right:5%
+   Original texto: top:340px, left:150px  → top:219px, left:11.7%
+   Original desc:  top:410px, left:150px  → top:289px, left:11.7%
+══════════════════════════════════════ */
+.secaoPilsen {
+  position: relative;
+  min-height: 500px;
+  z-index: 1;
+}
+
+.imgPilsen {
+  position: absolute;
+  width: 20%;
+  right: 5%;
+  top: 97px;
+  z-index: 1;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.imgPilsen:hover {
+  transform: scale(1.2) rotate(-25deg);
+  filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.textosPilsen {
+  position: absolute;
+  top: 219px;
+  left: 11.7%;
+  max-width: 45%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideIn 3s ease-out;
+}
+
+/* ══════════════════════════════════════
+   Seção 2 — Florest (fundo verde)
+   No original: section position:absolute margin-top:600px.
+   Filhos relativos à section.
+   Beer:  left:100px → left:7.8%,  top:150px
+   Texto: left:1100px → right:5%, top:340px
+   Desc:  left:1100px → right:5%, top:410px
+══════════════════════════════════════ */
+.secaoFlorest {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.fundoVerde {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
+
+.imgFlorest {
+  position: absolute;
+  width: 25%;
+  left: 7.8%;
+  top: 150px;
+  z-index: 1;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.imgFlorest:hover {
+  transform: scale(1.2) rotate(25deg);
+  filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.textosFlorest {
+  position: absolute;
+  top: 340px;
+  right: 5%;
+  max-width: 40%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideIn 3s ease-out;
+}
+
+/* ══════════════════════════════════════
+   Seção 3 — Blue Dark (fundo azul)
+   No original: section position:absolute top:1600px.
+   Beer:  left:1100px → right:5%, top:218px
+   Texto: left:150px  → left:11.7%, top:340px
+   Desc:  left:150px  → left:11.7%, top:410px
+══════════════════════════════════════ */
+.secaoBlue {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.fundoAzul {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
+
+.imgBlue {
+  position: absolute;
+  width: 25%;
+  right: 5%;
+  top: 218px;
+  z-index: 1;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.imgBlue:hover {
+  transform: scale(1.2) rotate(-25deg);
+  filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.textosBlue {
+  position: absolute;
+  top: 340px;
+  left: 11.7%;
+  max-width: 40%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideIn 3s ease-out;
+}
+
+/* ── HR ── */
+.hr {
+  border: none;
+  background-color: #fff;
+  height: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ══════════════════════════════════════
+   Responsividade
+══════════════════════════════════════ */
+
+/* Tablet: reduz fontes, ajusta posições proporcionalmente */
+@media (max-width: 1024px) {
+  .titulo   { font-size: 28px; }
+  .descricao { font-size: 16px; }
+
+  .imgPilsen  { width: 26%; }
+  .imgFlorest { width: 30%; }
+  .imgBlue    { width: 30%; }
+
+  .textosPilsen  { max-width: 50%; }
+  .textosFlorest { max-width: 45%; }
+  .textosBlue    { max-width: 45%; }
+}
+
+/* Mobile: abandona o posicionamento absoluto e empilha em coluna */
+@media (max-width: 768px) {
+  .secaoPilsen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 24px 60px;
+    min-height: auto;
+  }
+
+  .secaoFlorest,
+  .secaoBlue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 24px 60px;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .fundoVerde,
+  .fundoAzul {
+    display: none;
+  }
+
+  .textosPilsen,
+  .textosFlorest,
+  .textosBlue {
+    position: static;
+    max-width: 90%;
+    animation: slideIn 3s ease-out; /* mantém a animação no mobile */
+  }
+
+  .imgPilsen,
+  .imgFlorest,
+  .imgBlue {
+    position: static;
+    width: 65%;
+    margin: 20px 0;
+  }
+
+  .titulo   { font-size: 26px; }
+  .descricao { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .titulo   { font-size: 22px; }
+  .descricao { font-size: 14px; }
+
+  .imgPilsen,
+  .imgFlorest,
+  .imgBlue {
+    width: 80%;
+  }
+}

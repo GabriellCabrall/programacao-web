@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+/* Animação: cai de cima (mesmo keyframe que @keyframes container no original) */
+@keyframes entrar {
+  from { top: -800px; opacity: 0; }
+  to   { top: 0px;    opacity: 1; }
+}
+
+.container {
+  font-family: 'Alata', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 60px 80px;
+  gap: 40px;
+  animation: entrar 3s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.containerImg {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.containerImg img {
+  width: 100%;
+  max-width: 220px;
+}
+
+.containerTexto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.textoPrincipal {
+  font-size: clamp(28px, 4vw, 50px);
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.botao {
+  font-family: 'Alata', sans-serif;
+  color: #fff;
+  border: 4px solid #fff;
+  background: transparent;
+  padding: 15px 30px;
+  font-size: clamp(16px, 1.5vw, 20px);
+  cursor: pointer;
+  transition: all 0.5s;
+  align-self: flex-start;
+}
+
+.botao:hover {
+  color: #000;
+  border-color: #000;
+  border-radius: 20px;
+  scale: 1.2;
+}
+
+.caratriste {
+  margin-left: 200px;
+  padding-left: 100px;
+  flex-shrink: 0;
+  width: clamp(80px, 12vw, 160px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 40px 24px;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .containerImg {
+    width: auto;
+  }
+
+  .containerImg img {
+    width: 160px;
+  }
+
+  .caratriste {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100px;
+  }
+
+  .botao {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerImg img {
+    width: 120px;
+  }
+
+  .botao {
+    padding: 12px 24px;
+  }
+}

@@ -1,0 +1,226 @@
+.cabecalho {
+  margin-bottom: 28px;
+}
+
+.cabecalho h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin: 0 0 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cabecalho p {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Resumo ── */
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.resumoCard {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resumoValor {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFA800;
+  font-family: 'Poppins', sans-serif;
+}
+
+.resumoLabel {
+  font-size: 12px;
+  color: #888;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Formulário de inscrição ── */
+.formCard {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.formCard h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin: 0 0 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formLinha {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.formLinha select {
+  flex: 1;
+  min-width: 200px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  color: #1c1c1c;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.formLinha select:focus { border-color: #FFA800; }
+
+.formLinha select.selectErro { border-color: #e53935; }
+
+.btnInscrever {
+  background: #FFA800;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.btnInscrever:hover { opacity: 0.85; }
+
+.erroForm {
+  font-size: 12px;
+  color: #e53935;
+  margin-top: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Tabela do relatório ── */
+.secaoTabela h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin: 0 0 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tabelaWrapper {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+.tabela thead tr {
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.tabela th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Separador visual entre colunas de entidades diferentes */
+.thEvento { border-right: 2px solid #e8e8e8; }
+.thCliente { }
+
+.tabela tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+.tabela tbody tr:last-child { border-bottom: none; }
+.tabela tbody tr:hover { background: #fffbf2; }
+
+.tabela td {
+  padding: 12px 14px;
+  color: #333;
+  vertical-align: middle;
+}
+
+.tdEvento { border-right: 2px solid #f0f0f0; }
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.badgeOk {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badgeLotado {
+  background: #fff0f0;
+  color: #e53935;
+}
+
+.btnRemover {
+  background: #fff0f0;
+  color: #e53935;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btnRemover:hover { background: #ffcdd2; }
+
+/* ── Empty / Warning states ── */
+.aviso {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: #795548;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 16px;
+}
+
+.vazio {
+  text-align: center;
+  padding: 48px 24px;
+  color: #bbb;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px dashed #ddd;
+}

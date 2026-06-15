@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700;900&display=swap');
+
+/* Animação de entrada do card — original: animation: iniciar 1.6s ease-out */
+@keyframes aparecer {
+  from { transform: translateY(-60px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* Layout: form à esquerda, cervejas à direita */
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  padding: 40px 60px;
+  position: relative;
+  z-index: 1;
+  gap: 40px;
+}
+
+/* Card branco do form — fiel ao original */
+.formCard {
+  background: #fff;
+  border-radius: 20px;
+  padding: 60px;
+  color: #FFA800;
+  animation: aparecer 1.6s ease-out;
+  width: min-content;
+}
+
+/* Logo colorida + título "Adquira a sua" */
+.tituloImg {
+  display: block;
+  width: 50px;
+  margin-bottom: 8px;
+}
+
+.titulo {
+  font-size: 1.8em;
+  margin-bottom: 10%;
+  color: #FFA800;
+  white-space: nowrap;
+}
+
+/* Labels */
+.formCard label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #FFA800;
+}
+
+/* Linha de input: ícone + campo */
+.inputRow {
+  display: flex;
+  align-items: center;
+  min-width: 280px;
+  border-radius: 22px;
+  border: 2px solid #000;
+  padding: 5px;
+  margin: 0 0 12px -5px;
+  gap: 4px;
+}
+
+/* Ícone com gradiente — fiel ao original */
+.inputRow .icone {
+  font-size: 1.2em;
+  padding: 5px;
+  background: linear-gradient(316.12deg, #FFA800 59.23%, #FF2525 116.27%);
+  border-radius: 30px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  flex-shrink: 0;
+}
+
+.inputRow input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+}
+
+/* Botão Enviar */
+.btnWrapper {
+  margin-top: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.btnEnviar {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(316.12deg, #FFA800 59.23%, #FF2525 116.27%);
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-size: 1.2em;
+  color: #000;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.5s;
+}
+
+.btnEnviar:hover {
+  background: linear-gradient(246.81deg, #0bc539 2.99%, #23ec66 100%);
+  scale: 1.2;
+}
+
+/* Imagem das cervejas — original: position absolute, right, bottom */
+.cervejaImg {
+  width: clamp(160px, 20vw, 320px);
+  transition: 1s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cervejaImg:hover {
+  scale: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 32px 24px;
+    align-items: center;
+  }
+
+  .formCard {
+    padding: 40px 32px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .cervejaImg {
+    width: 65%;
+  }
+}
+
+@media (max-width: 480px) {
+  .formCard {
+    padding: 32px 24px;
+  }
+
+  .inputRow {
+    min-width: unset;
+    width: 100%;
+  }
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+@keyframes sol {
+  0%   { left: 1500px; rotate: 2000deg; scale: 0; }
+  50%  { rotate: 1000deg; scale: 2; }
+  100% { left: -300px; rotate: 0deg; scale: 0; }
+}
+
+.sol {
+  position: absolute;
+  top: 121px;
+  width: 10%;
+  left: -500px;
+  padding: 20px;
+  animation: sol 15s ease-out;
+  scale: -1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inicio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  padding: 0 40px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  width: 20%;
+  flex-shrink: 0;
+  margin-left: 40px;
+}
+
+.texto {
+  font-family: 'Alata', sans-serif;
+  font-size: clamp(40px, 5vw, 80px);
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-top: 120px;
+  margin-left: 100px;
+  flex-shrink: 0;
+}
+
+.cervejas {
+  flex: 1;
+  max-width: 55%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.cervejas:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.hr {
+  border: none;
+  background-color: #fff;
+  height: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .inicio {
+    flex-direction: column;
+    padding: 32px 24px;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .logo {
+    width: 55%;
+    margin-left: 0;
+  }
+
+  .texto {
+    margin-top: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .cervejas {
+    max-width: 90%;
+  }
+}

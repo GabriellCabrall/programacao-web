@@ -1,0 +1,146 @@
+/* Estilos compartilhados entre os 3 CRUDs */
+
+/* ── Cabeçalho ── */
+.cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.titulos h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin: 0 0 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.titulos p {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btnNovo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFA800;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.btnNovo:hover { opacity: 0.85; }
+
+/* ── Formulário ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+  color: #1c1c1c;
+  background: #fff;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus { border-color: #FFA800; }
+
+.campo input.inputErro,
+.campo select.inputErro,
+.campo textarea.inputErro { border-color: #e53935; }
+
+.campo textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.msgErro {
+  font-size: 12px;
+  color: #e53935;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Botões do formulário ── */
+.formBotoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.btnSalvar {
+  background: #FFA800;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btnSalvar:hover { opacity: 0.85; }
+
+.btnCancelar {
+  background: transparent;
+  color: #666;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btnCancelar:hover { border-color: #999; color: #333; }
+
+/* ── Estado vazio ── */
+.vazio {
+  text-align: center;
+  padding: 60px 24px;
+  color: #bbb;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px dashed #ddd;
+}
+
+.vazio p { margin: 8px 0 0; }
